@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>zkMultiCrush</title>
+</head>
+
+<body>
+    <div class="layout">
+        <main id="content" class="content">
+            <section class="heavy">
+                <div class="container">
+                    <div class="col-3">
+                        <div class="hero">
+                            <a href="/"><img src="logos/logo.png" alt="zkMultiCrush" /></a>
+                            <p class="tagline">
+                                <b>FIND OUT NOW!</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div>
+                <section>
+                    <div>
+                        <p>You are at <span id="user_name"></span>'s zkMultiCrush oracle!</p>
+                    </div>
+                </section>
+            </div>
+
+            <div>
+                <section>
+                    <div>
+                        <p>Your Name (first and last capitalized)</p>
+                        <input type="text" id="crush_name" name="crush_name">
+                    </div>
+                </section>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-sm" onclick="processUrl();">Crush Or Not?</button>
+            <div>
+                <section>
+                    <div>
+                        <span id="answer"></span>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+        integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="openpgp.js"></script>
+    <script src="crushIndex.js"></script>
+</body>
+
+</html>
