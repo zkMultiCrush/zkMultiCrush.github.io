@@ -1,39 +1,44 @@
 const BASE_URL = "/crushIndex.html"
-const PASSPHRASE = '123';
+const MAX_CRUSHES = 10
 
 const createNewElement = () => {
-    let crushCount = document.getElementById("crushes").childElementCount;
+    let crushCount = document.getElementById("mehboobas").childElementCount;
 
-    if (crushCount >= 10) {
+    if (crushCount >= MAX_CRUSHES) {
+        // TODO: HTML TO BE ADDED HERE
         alert("No more crushes allowed!");
         return;
     }
 
-    var newCrush = document.createElement('li');
-    newCrush.innerHTML = "<input type='text' class='crush_name' name='crush_name' placeholder='First Last'>";
-    document.getElementById("crushes").appendChild(newCrush);
+    var newCrush = document.createElement('div');
+    newCrush.setAttribute('class', 'row mehbooba-row')
+    newCrush.innerHTML = `<input type="text" class="form-control mehbooba" name="mehbooba" placeholder="Kim Kardashian" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Please enter crush's name!
+                            </div>`
+    document.getElementById("mehboobas").appendChild(newCrush);
 }
 
-const fetchUserName = () => document.getElementById("user_name").value
-const fetchCrushNames = () => [...document.getElementsByClassName("crush_name")].map(cn => cn.value)
+const fetchUserName = () => document.getElementById("aashiq").value.trim()
+
+const fetchCrushNames = () => [...document.getElementsByClassName("mehbooba")].map(cn => cn.value.trim())
 
 const encryptWithAES = (text) => {
-    return CryptoJS.AES.encrypt(text, PASSPHRASE).toString();
+    return CryptoJS.AES.encrypt(text, "123").toString();
 };
 
-const generateUrl = async () => {
-    const user_name = fetchUserName()
-    const crushes = fetchCrushNames()
+const generateURL = async () => {
+    const aashiq = fetchUserName()
+    const mehboobas = fetchCrushNames()
 
-    const message = await openpgp.createMessage({ text: user_name });
+    const message = await openpgp.createMessage({ text: aashiq });
     const encrypted = await openpgp.encrypt({
         message,
-        passwords: crushes,
+        passwords: mehboobas,
         config: { preferredCompressionAlgorithm: openpgp.enums.compression.zlib }
     });
 
     const encryptedBody = encodeURIComponent(encryptWithAES(encrypted));
-    const url = "https://" + window.location.hostname + BASE_URL + `?hash=${encryptedBody}` + `&name=${encodeURIComponent(user_name)}`;
-    document.getElementById("finalURL").innerHTML = `<a href=${url}>${url}</a>`;
-    console.log(url)
+    const url = "https://" + window.location.hostname + BASE_URL + `?hash=${encryptedBody}` + `&name=${encodeURIComponent(aashiq)}`;
+    document.getElementById("finalURL").innerHTML = `<a href=${url} id="disclaimer-links">${url}</a>`;
 }

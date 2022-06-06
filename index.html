@@ -7,57 +7,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="index.css" rel="stylesheet">
     <title>zkMultiCrush</title>
 </head>
 
 <body>
-    <div class="layout">
-        <main id="content" class="content">
-            <section class="heavy">
-                <div class="container">
-                    <div class="col-3">
-                        <div class="hero">
-                            <a href="/"><img src="logos/logo.png" alt="zkMultiCrush" /></a>
-                            <p class="tagline">
-                                <b>NAME YOUR CRUSHES!</b>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div>
-                <section>
-                    <div>
-                        <p>Your Name (first and last capitalized)</p>
-                        <input type="text" id="user_name" name="user_name">
-                    </div>
-                </section>
+    <div id="header-block" class="container-sm">
+        <div class="row">
+            <div class="col text-center">
+                <a id="heading" href="/index.html">zkMultiCrush</a>
             </div>
+        </div>
+        <div class="row">
+            <div id="subheading" class="col text-center">
+                Because True Love is Cryptographically Verifiable!
+            </div>
+        </div>
+    </div>
 
-            <div>
-                <p>Name(s) of your crush(es) (first and last capitalized)</p>
-                <ul id="crushes">
+    <div id="disclaimer" class="container-sm">
+        <div class="row">
+            <div class="col">
+                This is a proof-of-concept of a multi-encryption zero knowledge cryptographic protocol that we have
+                named zkMultiCrush. Additionally, this page uses <a id="disclaimer-links" target="_blank"
+                    href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">NO
+                    SERVER</a>, stores <a id="disclaimer-links" target="_blank"
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams">NO DATA</a> and is
+                completely <a id="disclaimer-links" target="_blank"
+                    href="https://en.wikipedia.org/wiki/Client-side">CLIENT
+                    SIDE</a>.
+            </div>
+        </div>
+    </div>
+
+    <div id="how-to-use" class="container-sm">
+        <div class="row">
+            <div class="col">
+                HOW TO USE?
+            </div>
+        </div>
+    </div>
+
+    <div id="manual" class="container-sm">
+        <div class="row">
+            <div class="col">
+                Tell a crush you like them without revealing all your other crushes!
+                <ul id="manual-list">
                     <li>
-                        <input type="text" class="crush_name" name="crush_name" placeholder="First Last">
+                        Add your name
+                    </li>
+                    <li>
+                        Add the names of your crushes
+                    </li>
+                    <li>
+                        Generate a link and send it out!
                     </li>
                 </ul>
-                <button type=" button" class="btn btn-primary btn-sm" onclick="createNewElement();">+</button>
+                We then generate a custom link with a <b>military grade ciphertext</b> that encodes your and your
+                crushes' names. People can <b>enter their names into this custom link</b> to decrypt the ciphertext.
+                Based on the result of decryption, they're told <b>whether they're your crush or not</b>. Aside from
+                this, <b>no other info is revealed, including the number of crushes</b> (unless they're God or a
+                superpowerful Quantum Computer).
             </div>
-
-
-            <button type="button" class="btn btn-primary btn-sm" onclick="generateUrl();">Generate URL</button>
-
-            <div>
-                <section>
-                    <div id="finalURL">
-                    </div>
-                </section>
-            </div>
-
-
-        </main>
+        </div>
     </div>
+
+    <div class="container-sm">
+        <div class="row" id="aashiq-block">
+            <div class="col-md-auto" id="aashiq-header">
+                <label for="aashiq" class="form-label">Enter Your Name (First and Last capitalized)</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="aashiq" name="aashiq" aria-describedby="inputGroupPrepend"
+                    placeholder="Kanye West">
+                <div class="invalid-feedback">
+                    Please enter your name!
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="mehbooba-block">
+            <div class="col-md-auto" id="mehbooba-header">
+                <label for="mehbooba" class="form-label">Name(s) of your crush(es) (First and Last
+                    capitalized)</label>
+            </div>
+            <div class="col-md-3 row" id="mehboobas">
+                <div class="row mehbooba-row">
+                    <input type="text" class="form-control mehbooba" name="mehbooba" placeholder="Kim Kardashian"
+                        aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Please enter crush's name!
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-auto" id="add-mehbooba-block">
+                <button type="button" id="add-mehbooba" class="btn btn-primary btn"
+                    onclick="createNewElement();">+</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" id="generateURL-block">
+                <button type="button" id="generateURL" class="btn btn-primary btn-lg" onclick="generateURL();">Generate
+                    URL</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="finalURL">
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <footer class="footer fixed-bottom mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">Made with ❤️ by Tarun & Shravan</span>
+        </div>
+    </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
@@ -65,7 +132,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
         integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="openpgp.js"></script>
+    <script src="openpgp.min.js"></script>
     <script src="index.js"></script>
 </body>
 

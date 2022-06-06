@@ -1,0 +1,142 @@
+ @font-face {
+     font-family: Monacos;
+     src: url('assets/Monaco.ttf');
+ }
+
+ body {
+     background: url("./bkg.png");
+     font-family: Monacos, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+     line-height: 1.5;
+     color: #eaeaea;
+     -webkit-font-smoothing: antialiased;
+ }
+
+ .container-sm {
+     max-width: 900px !important;
+ }
+
+ #header-block {
+     border: 1px dashed #b5e853;
+     padding-top: 40px;
+     padding-bottom: 20px;
+     margin-top: 20px;
+     margin-bottom: 50px;
+ }
+
+ #heading {
+     font-size: 40px;
+     font-weight: 800;
+     color: #b5e853;
+     text-decoration: none;
+ }
+
+ #subheading {
+     font-size: 18px;
+     color: #666;
+     margin-top: 15px;
+ }
+
+ #disclaimer {
+     margin-top: 20px;
+     margin-bottom: 50px;
+ }
+
+ #disclaimer-links {
+     color: #63C0F5;
+     word-wrap: break-word;
+     max-width: 600px;
+ }
+
+ #how-to-use {
+     display: flex;
+     justify-content: center;
+     font-size: 24px;
+     color: #b5e853;
+     margin-bottom: 20px;
+ }
+
+ #manual-list {
+     margin-top: 10px;
+ }
+
+ #aashiq {
+     margin-bottom: 10px;
+ }
+
+ #aashiq-block {
+     margin-top: 50px;
+ }
+
+ #aashiq-header {
+     padding-top: 5px;
+     display: flex;
+     justify-content: center;
+     flex-direction: row;
+ }
+
+ .mehbooba {
+     margin-bottom: 10px;
+ }
+
+ #mehbooba-block {
+     margin-top: 30px;
+ }
+
+ #mehbooba-header {
+     padding-top: 10px;
+     display: flex;
+     justify-content: center;
+     flex-direction: row;
+ }
+
+ #add-mehbooba {
+     border-radius: 50%;
+ }
+
+ #add-mehbooba-block {
+     display: flex;
+     padding: 10px;
+     align-items: flex-end;
+     justify-content: center;
+     flex-direction: row;
+ }
+
+ #generateURL-block {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 20px;
+ }
+
+ #finalURL {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 20px;
+ }
+
+ #answer {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 20px;
+     font-size: 24px;
+     color: yellow;
+ }
+
+ .bold-text {
+     font-weight: 100;
+ }
+
+ .clear {
+     clear: both;
+     height: 60px;
+ }
+
+ .btn-primary,
+ .btn-primary:hover,
+ .btn-primary:active,
+ .btn-primary:visited {
+     background-color: #3580FF !important;
+     border-color: #3580FF;
+ }
